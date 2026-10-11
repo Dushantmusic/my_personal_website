@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Dushant Brahmane — educator, musician, and owner of Groove In Music Academy.">
+<title>Dushant Brahmane — Educator • Musician</title>
+<style>
+  :root {
+    --ink: #101b17;
+    --forest: #153c2b;
+    --green: #26734d;
+    --lime: #c9e36b;
+    --paper: #f4f3ed;
+    --white: #fffefa;
+    --muted: #69736b;
+    --line: rgba(16,27,23,.16);
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body { margin: 0; background: var(--paper); color: var(--ink); font-family: Arial, Helvetica, sans-serif; }
+  a { color: inherit; }
+  .wrap { width: min(1160px, calc(100% - 48px)); margin: auto; }
+  .topbar { padding: 23px 0; display:flex; align-items:center; justify-content:space-between; gap:20px; border-bottom:1px solid var(--line); }
+  .brand { display:flex; align-items:center; gap:12px; text-decoration:none; font-weight:800; letter-spacing:.09em; font-size:.88rem; text-transform:uppercase; }
+  .mark { width:34px; height:34px; display:grid; place-items:center; border:2px solid var(--forest); border-radius:50%; font-size:.7rem; letter-spacing:-.08em; color:var(--forest); }
+  nav { display:flex; gap:26px; flex-wrap:wrap; }
+  nav a { font-size:.78rem; text-decoration:none; text-transform:uppercase; letter-spacing:.1em; color:#4c5850; }
+  nav a:hover { color:var(--green); }
+  .hero { display:grid; grid-template-columns:1.1fr .9fr; gap:42px; align-items:center; padding:78px 0 82px; }
+  .eyebrow { font-size:.74rem; text-transform:uppercase; letter-spacing:.19em; color:var(--green); font-weight:800; }
+  h1 { font-size:clamp(3.3rem, 8vw, 7rem); letter-spacing:-.075em; line-height:.88; margin:22px 0 24px; max-width:760px; font-weight:800; }
+  h1 span { color:var(--green); }
+  .intro { max-width:560px; color:#4f5c53; line-height:1.75; font-size:1.05rem; }
+  .actions { display:flex; flex-wrap:wrap; gap:12px; margin-top:30px; }
+  .btn { display:inline-flex; align-items:center; justify-content:center; padding:14px 20px; text-decoration:none; text-transform:uppercase; letter-spacing:.1em; font-size:.72rem; font-weight:800; border:1px solid var(--forest); transition:transform .2s, background .2s; }
+  .btn:hover { transform:translateY(-2px); }
+  .btn.primary { background:var(--forest); color:white; }
+  .btn.secondary { background:transparent; }
+  .visual { min-height:440px; background:var(--forest); color:white; padding:28px; position:relative; overflow:hidden; display:flex; flex-direction:column; justify-content:space-between; }
+  .visual:before { content:""; position:absolute; width:360px; height:360px; border:1px solid rgba(201,227,107,.45); border-radius:50%; right:-90px; top:25px; }
+  .visual:after { content:""; position:absolute; width:245px; height:245px; border:1px solid rgba(201,227,107,.45); border-radius:50%; right:-32px; top:82px; }
+  .visual-top,.visual-bottom,.orbit { position:relative; z-index:1; }
+  .visual-top { display:flex; justify-content:space-between; gap:12px; font-size:.68rem; text-transform:uppercase; letter-spacing:.14em; color:#dce8dc; }
+  .orbit { align-self:center; width:190px; height:190px; border-radius:50%; border:1px solid var(--lime); display:grid; place-items:center; text-align:center; transform:rotate(-8deg); }
+  .orbit strong { font-size:3.5rem; letter-spacing:-.09em; color:var(--lime); }
+  .orbit small { display:block; font-size:.65rem; text-transform:uppercase; letter-spacing:.17em; margin-top:8px; }
+  .visual-bottom { display:flex; justify-content:space-between; align-items:end; gap:15px; }
+  .visual-bottom strong { font-size:1.2rem; }
+  .visual-bottom span { font-size:.72rem; line-height:1.5; color:#dce8dc; text-align:right; max-width:145px; }
+  .ticker { background:var(--lime); overflow:hidden; padding:15px 0; }
+  .ticker p { margin:0; text-align:center; text-transform:uppercase; letter-spacing:.16em; font-weight:800; font-size:.74rem; }
+  section { padding:76px 0; }
+  .section-head { display:flex; justify-content:space-between; align-items:end; gap:24px; margin-bottom:35px; }
+  .section-head h2 { margin:12px 0 0; font-size:clamp(2rem,4vw,3.4rem); letter-spacing:-.06em; line-height:1; }
+  .section-head p { max-width:380px; margin:0; line-height:1.65; color:var(--muted); font-size:.92rem; }
+  .cards { display:grid; grid-template-columns:repeat(3,1fr); gap:14px; }
+  .card { background:var(--white); border:1px solid var(--line); padding:27px; min-height:220px; }
+  .card .num { font-size:.72rem; color:var(--green); font-weight:800; letter-spacing:.12em; }
+  .card h3 { font-size:1.35rem; margin:30px 0 10px; letter-spacing:-.04em; }
+  .card p { color:var(--muted); line-height:1.65; font-size:.9rem; margin:0; }
+  .split { display:grid; grid-template-columns:.8fr 1.2fr; gap:60px; align-items:start; }
+  .dark { background:var(--forest); color:white; }
+  .dark .eyebrow { color:var(--lime); }
+  .dark .section-head p { color:#c2d0c5; }
+  .timeline { border-top:1px solid rgba(255,255,255,.25); }
+  .timeline-item { padding:22px 0; display:grid; grid-template-columns:130px 1fr; gap:20px; border-bottom:1px solid rgba(255,255,255,.25); }
+  .timeline-item time { color:var(--lime); font-size:.75rem; text-transform:uppercase; letter-spacing:.1em; padding-top:4px; }
+  .timeline-item h3 { margin:0 0 7px; font-size:1.15rem; }
+  .timeline-item p { margin:0; color:#c2d0c5; line-height:1.6; font-size:.9rem; }
+  .education { display:grid; grid-template-columns:repeat(2,1fr); gap:12px; }
+  .edu { padding:22px; border:1px solid var(--line); }
+  .edu h3 { margin:0 0 8px; font-size:1rem; }
+  .edu p { margin:0; color:var(--muted); line-height:1.55; font-size:.85rem; }
+  .contact { background:var(--lime); padding:55px 0; }
+  .contact-inner { display:flex; justify-content:space-between; align-items:center; gap:25px; }
+  .contact h2 { font-size:clamp(2rem,5vw,4.2rem); letter-spacing:-.07em; line-height:.95; margin:10px 0 0; }
+  .contact .btn { border-color:var(--ink); background:var(--ink); color:white; white-space:nowrap; }
+  footer { padding:24px 0; display:flex; justify-content:space-between; gap:20px; color:var(--muted); font-size:.75rem; }
+  @media (max-width:760px) {
+    .wrap { width:min(100% - 32px, 600px); }
+    .topbar { align-items:flex-start; flex-direction:column; }
+    nav { gap:15px; }
+    .hero { grid-template-columns:1fr; padding:55px 0; gap:30px; }
+    .visual { min-height:350px; }
+    .section-head,.contact-inner { align-items:flex-start; flex-direction:column; }
+    .cards { grid-template-columns:1fr; }
+    .split { grid-template-columns:1fr; gap:28px; }
+    .timeline-item { grid-template-columns:1fr; gap:8px; }
+    .education { grid-template-columns:1fr; }
+    footer { flex-direction:column; }
+  }
+  @media (prefers-reduced-motion: reduce) { html { scroll-behavior:auto; } *,*::before,*::after { transition:none !important; } }
+</style>
+</head>
+<body>
+<header class="wrap topbar">
+  <a class="brand" href="#home" aria-label="Dushant Brahmane home"><span class="mark">DB</span><span>Dushant Brahmane</span></a>
+  <nav aria-label="Main navigation">
+    <a href="#about">About</a><a href="#work">What I do</a><a href="#journey">Journey</a><a href="#contact">Contact</a>
+  </nav>
+</header>
+
+<main id="home">
+  <div class="wrap hero">
+    <div>
+      <div class="eyebrow">Educator · Musician · Lifelong learner</div>
+      <h1>Making room<br>for <span>ideas.</span></h1>
+      <p class="intro">I’m Dushant Brahmane — a teacher, musician, and the owner of Groove In Music Academy. My work brings together learning, music, people, and thoughtful problem-solving.</p>
+      <div class="actions">
+        <a class="btn primary" href="#contact">Get in touch <span aria-hidden="true">&nbsp;↗</span></a>
+        <a class="btn secondary" href="#journey">Explore my journey</a>
+      </div>
+    </div>
+    <aside class="visual" aria-label="Personal profile graphic">
+      <div class="visual-top"><span>Personal portfolio</span><span>India · 01</span></div>
+      <div class="orbit"><div><strong>DB</strong><small>Learn · Lead · Create</small></div></div>
+      <div class="visual-bottom"><strong>Curiosity in motion.</strong><span>Education<br>Music · Management</span></div>
+    </aside>
+  </div>
+
+  <div class="ticker"><div class="wrap"><p>Teach with purpose &nbsp; / &nbsp; Create with music &nbsp; / &nbsp; Lead with empathy</p></div></div>
+
+  <section id="about" class="wrap">
+    <div class="section-head">
+      <div><div class="eyebrow">A little about me</div><h2>Different disciplines.<br>One curious mind.</h2></div>
+      <p>From the classroom to music, and from political science to management, I enjoy connecting ideas and helping people grow.</p>
+    </div>
+    <div class="cards">
+      <article class="card"><span class="num">01 / EDUCATION</span><h3>Teaching & learning</h3><p>Music teacher at Podar International School, Mumbai, working in education in Powai.</p></article>
+      <article class="card"><span class="num">02 / MUSIC</span><h3>Groove In Music Academy</h3><p>Owner of Groove In Music Academy, building space for musical learning and expression.</p></article>
+      <article class="card"><span class="num">03 / THINKING</span><h3>People & problem-solving</h3><p>Interested in talent management, music theory, and practical problem-solving.</p></article>
+    </div>
+  </section>
+
+  <section id="work" class="dark">
+    <div class="wrap split">
+      <div><div class="eyebrow">What I bring</div><div class="section-head"><h2>Skills with<br>purpose.</h2></div><p style="color:#c2d0c5;line-height:1.75;max-width:360px">A mix of creative practice, people skills, and academic perspectives informs how I approach my work.</p></div>
+      <div class="cards">
+        <article class="card"><span class="num">01</span><h3>Problem solving</h3><p>Approaching challenges with curiosity, structure, and a practical mindset.</p></article>
+        <article class="card"><span class="num">02</span><h3>Talent management</h3><p>Understanding people, supporting growth, and helping teams develop.</p></article>
+        <article class="card"><span class="num">03</span><h3>Music theory</h3><p>Connecting musical foundations with creativity and teaching.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <section id="journey" class="wrap">
+    <div class="section-head">
+      <div><div class="eyebrow">Experience & education</div><h2>A journey of<br>continuous learning.</h2></div>
+      <p>My background spans classroom teaching, political science, and rural development management.</p>
+    </div>
+    <div class="split" style="gap:45px">
+      <div class="timeline" style="border-color:var(--line)">
+        <div class="timeline-item" style="border-color:var(--line)"><time>Apr 2022 — Present</time><div><h3>Music Teacher</h3><p>Podar International School · Powai, Mumbai</p></div></div>
+        <div class="timeline-item" style="border-color:var(--line)"><time>Ongoing</time><div><h3>Owner</h3><p>Groove In Music Academy</p></div></div>
+      </div>
+      <div class="education">
+        <article class="edu"><h3>Master of Arts — Political Science</h3><p>Indira Gandhi National Open University · 2024 listed</p></article>
+        <article class="edu"><h3>Bachelor of Arts — Political Science</h3><p>University of Mumbai · 2016–2019</p></article>
+        <article class="edu"><h3>Postgraduate Diploma</h3><p>Rural Development Management · National Institute of Rural Development and Panchayati Raj (NIRDPR)</p></article>
+        <article class="edu"><h3>Certificate</h3><p>Management of Natural Resources in Rural Areas</p></article>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="contact">
+    <div class="wrap contact-inner">
+      <div><div class="eyebrow">Have a conversation in mind?</div><h2>Let’s make<br>something meaningful.</h2></div>
+      <a class="btn" href="mailto:dushantmusic28@gmail.com">Email me ↗</a>
+    </div>
+  </section>
+</main>
+
+<footer class="wrap">
+  <span>© <span id="year">2026</span> Dushant Brahmane</span>
+  <span>Educator · Musician · Groove In Music Academy</span>
+  <a href="https://www.linkedin.com/in/dushant-brahmane-73b79622b" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a>
+</footer>
+</body>
+</html>
